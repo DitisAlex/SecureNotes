@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  securenotes_app:
+    container_name: securenotes_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+        NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+        NEXTAUTH_URL: '${NEXTAUTH_URL}'
+        GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+        GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+        DOMAIN_NAME: ${DOMAIN_NAME}
+        BUCKET_NAME: ${BUCKET_NAME}
+        REGION: ${REGION}
+        SECRET_SALT: ${SECRET_SALT}
+        UPSTASH_REDIS_REST_URL: ${UPSTASH_REDIS_REST_URL}
+        UPSTASH_REDIS_REST_TOKEN: ${UPSTASH_REDIS_REST_TOKEN}
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - securenotes_mysql
+  securenotes_mysql:
+    container_name: securenotes_mysql
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'securenotes'
+      MYSQL_PASSWORD: 'securenotes'
+      MYSQL_USER: 'securenotes'
+      MYSQL_ROOT_PASSWORD: 'securenotes'
+    ports:
+      - 3306:3306
+    volumes:
+      - securenotes_mysql_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+volumes:
+  securenotes_mysql_data:

@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /*
+        / General colors
+        */
+        --color-default: #DEE2E6;
+        --color-primary: #0E4DFF;
+
+        /*
+        / Text colors
+        */
+        --text-color-primary: #000721;
+        --text-color-secondary: #868E96;
+        --text-color-placeholder: #ADB5BD;
+        --text-tertiary: #414861;
+        --text-heading: #000721;
+        --text-body: #414861;
+
+        /*
+        / Surface colors
+        */
+        --surface-color-primary: #FFFFFF;
+        --surface-color-secondary: #F8F9FA;
+        --surface-color-border: #DEE2E6;
+        --surfer-color-border-hover: #E3E9EE;
+        --surface-color-table: #CED4DA;
+        --surface-color-tertiary: #F1F3F5;
+
+        /*
+        / Button colors
+        */
+        --button-color-primary: #0E4DFF;
+        --button-color-hover: #4778ff;
+
+        /*
+        /   Label colors
+        */
+        --label-color-text: #0E4DFF;
+        --label-color-surface: #E5ECFF;
+        --secure-color-text: #099268;
+        --secure-color-surface: #E6FCF5;
+
+        /*
+        /   Alert colors
+        */
+        --alert-color-text: #FD7E14;
+        --alert-color-bg: #FFF4E6;
+    }
+
+    body {
+        color: var(--text-color-primary)
+    }
+}

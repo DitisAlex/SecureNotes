@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  securenotes_app:
+    container_name: securenotes_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+        NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+        NEXTAUTH_URL: '${NEXTAUTH_URL}'
+        GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+        GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+        DOMAIN_NAME: ${DOMAIN_NAME}
+        BUCKET_NAME: ${BUCKET_NAME}
+        REGION: ${REGION}
+        SECRET_SALT: ${SECRET_SALT}
+        UPSTASH_REDIS_REST_URL: ${UPSTASH_REDIS_REST_URL}
+        UPSTASH_REDIS_REST_TOKEN: ${UPSTASH_REDIS_REST_TOKEN}
+        AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+        AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+        AWS_SESSION_TOKEN: ${AWS_SESSION_TOKEN}
+    restart: always
+    ports:
+      - 3000:3000

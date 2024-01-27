@@ -1,0 +1,30 @@
+[
+	{
+		"time": "1d",
+		"text": "One Day"
+	},
+	{
+		"time": "2d",
+		"text": "Two Days"
+	},
+	{
+		"time": "3d",
+		"text": "Three Days"
+	},
+	{
+		"time": "4d",
+		"text": "Four Days"
+	},
+	{
+		"time": "5d",
+		"text": "Five Days"
+	},
+	{
+		"time": "6d",
+		"text": "Six Days"
+	},
+	{
+		"time": "7d",
+		"text": "Seven Days"
+	}
+]
